@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pagination plugin</title>
+<link rel="stylesheet"   href="bootstrap.min.css" type="text/css" />
+
+<style>
+             body{font-size:18px;}
+			 span{
+				 display: inline-block;
+                 height: 50px;
+                 line-height: 50px;
+				 }
+			
+			a{ margin:5px; text-decoration:none;}
+</style>
+<script type="text/javascript" src="pager.js"></script>
+<script>
+			window.onload = function() {
+				page({
+					//当前使用分页所在div的ID
+					id: 'pageul',
+					//当前页,默认为第一页
+					nowNum: 1,
+					//以此显示多少页
+					perPages:4,
+					//总共页数，就是服务端传过来的一共有几页
+					allNum: 20, 
+					//点击分页按钮之后的回调函数
+					//可根据当前页数去服务端查询数据并返回
+					//now为当前页数
+					callBack:function(now)	{
+						//在这里你可以去加载服务器数据
+						alert('当前页'+now);
+						}	
+				});
+			}
+
+			
+		</script>
+</head>
+<body>
+<nav>
+<ul class="pagination " id="pageul">
+</ul>
+
+
+</nav>
+
+</body>
+</html>
